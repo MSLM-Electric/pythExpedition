@@ -12,9 +12,7 @@ def FileEnumerate(inputDirPath, inputPathFile, RootPathConst):
     if inputDirPath != RootPathConst:
         for R in range(RootPathConst.__len__(), inputDirPath.__len__()):
             subdir.append(inputDirPath[R])
-        string = ''.join(str(x) for x in subdir)
         subdir = ''.join(subdir)
-        #print(string + "/")
         res.append(subdir + "/")
     if os.path.isfile(os.path.join(inputDirPath, inputPathFile)) and (inputPathFile.endswith(filterFileType) or inputPathFile.endswith(filterFileType2)):
         #print(inputPathFile)  # just for debug n message
