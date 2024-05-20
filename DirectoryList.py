@@ -1,13 +1,11 @@
 import os
 import sys
-#import argparse
+import argparse
 
-#parse = argparse.ArgumentParser()
-res = []
+parse = argparse.ArgumentParser()
 
-dir_path = r'D:\\Osim\\others\\myActions()\\testFolder\\'
-filterFileType = '.csv'
-filterFileType2 = '.txt'
+filterFileType = '.c'
+filterFileType2 = '.h'
 
 def list_files(startpath):
     for root, dirs, files in os.walk(startpath):
@@ -19,4 +17,16 @@ def list_files(startpath):
             if f.endswith(filterFileType) or f.endswith(filterFileType2):
                 print('{}{}'.format(subindent, f))
 
-list_files(dir_path)
+def main():
+    #parse.add_argument('-p', '--path', type=str, default="deflt",
+                       #help=('path from where scanning directories begins' '(default: %(deflt)s'))
+    print('__file__: ', __file__)
+    #if os.path.exist(args.path):
+    res = ''.join(__file__).replace("/", "\\\\")
+    print("current directory: ", res)
+    res = ''.join(res).replace(os.path.basename(res), "")
+    print("current scripts name: ", os.path.basename(__file__))
+    list_files(res)
+
+if __name__ == "__main__":
+    main()
