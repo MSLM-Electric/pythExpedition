@@ -5,6 +5,11 @@ dir_path = r'D:\\Osim\\others\\myActions()\\testFolder\\'
 filterFileType = '.csv'
 filterFileType2 = '.txt'
 
+class PathTree:
+    def __init__(self):
+        self.next = None
+        self.data = None
+
 res = []
 
 def FileEnumerate(inputDirPath, inputPathFile, RootPathConst):
@@ -17,6 +22,9 @@ def FileEnumerate(inputDirPath, inputPathFile, RootPathConst):
     if os.path.isfile(os.path.join(inputDirPath, inputPathFile)) and (inputPathFile.endswith(filterFileType) or inputPathFile.endswith(filterFileType2)):
         #print(inputPathFile)  # just for debug n message
         res.append(inputPathFile + "\"\n")  # \n bullsheet ?
+    #elif subdir[0] != None:
+    #   if os.path.isdir(os.path.join(inputDirPath + subdir, inputPathFile)):
+    #      subdir
 
 for pathfile in os.listdir(dir_path):
     if not os.path.isdir(os.path.join(dir_path, pathfile)):
