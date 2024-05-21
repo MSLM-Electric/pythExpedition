@@ -2,8 +2,8 @@ import os
 import sys
 import argparse
 
-filterFolderTypes = 'FreeRTOS_Sources', 'TestFolder2'
-filterFileTypes = '.c', '.h', '.cpp', '.txt'
+filterFolderTypes = 'FreeRTOS_Source', 'Supporting_Functions', 'ExamplesAndExperiments', 'ExternalLibs', 'TestFolders'
+filterFileTypes = '.c', '.h', '.cpp'
 
 def list_files(startpath):
     for root, dirs, files in os.walk(startpath):
