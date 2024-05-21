@@ -2,13 +2,13 @@ import os
 import sys
 import argparse
 
-filterFolderTypes = '',#'FreeRTOS_Sources', 'TestFolders'
+filterFolderTypes = 'FreeRTOS_Sources', 'TestFolder2'
 filterFileTypes = '.c', '.h', '.cpp', '.txt'
 
 def list_files(startpath):
     for root, dirs, files in os.walk(startpath):
         for folderfltr in filterFolderTypes:
-            if root.endswith(folderfltr):
+            if not root.rfind(folderfltr) == -1:
                 level = root.replace(startpath, '').count(os.sep)
                 indent = ' ' * 4 * (level)
                 print('{}{}/'.format(indent, os.path.basename(root)))
