@@ -18,8 +18,9 @@ def ping(host):
 
     s = subprocess.getoutput(' '.join(command))
     logging.info(s)
+    print(s)
 
-    return subprocess.call(command) == 0
+    return 0 #subprocess.call(command) == 0
 
 
 if __name__ == '__main__':
