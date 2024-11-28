@@ -16,8 +16,8 @@ def ping(host):
     # Building the command. Ex: "ping -c 4 google.com"
     command = ['ping', param, '2', host]
 
-    #s = subprocess.getoutput(' '.join(command))
-    #logging.info(s)
+    s = subprocess.getoutput(' '.join(command))
+    logging.info(s)
 
     return subprocess.call(command) == 0
 
@@ -40,8 +40,9 @@ if __name__ == '__main__':
             ipAddr = res
             ipAddr[3] = str(toScanByLSBAddr)
             ipAddr = '.'.join(ipAddr)
-            if(ping(ipAddr)):
-                logging.info(ipAddr + " get request!")
+            #if(ping(ipAddr)):
+                #logging.info(ipAddr + " get request!")
+            ping(ipAddr)
         except :
             print("Error!")
             break
