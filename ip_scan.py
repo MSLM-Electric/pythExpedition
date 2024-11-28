@@ -23,6 +23,14 @@ def ping(host):
     return 0 #subprocess.call(command) == 0
 
 
+#---------------------------------------------------------------#
+#TO USE DO command:
+#python ip_scan.py 192.168.x.n 255.255.x.0
+#x - subAddress
+#n - the address from begining. Usually you may begin from zero (n = 0)
+#Note: the mask filtering not implemented yet
+#---------------------------------------------------------------#
+
 if __name__ == '__main__':
     argumentList = sys.argv
     print(argumentList)
