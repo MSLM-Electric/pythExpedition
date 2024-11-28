@@ -22,8 +22,8 @@ def main():
     print('__file__: ', __file__)
     res = ''.join(__file__).replace("/", "\\\\")
     print("current directory: ", res)
-    res = ''.join(res).replace(os.path.basename(res), "")
     print("current scripts name: ", os.path.basename(__file__))
+    res = ''.join(res).replace(os.path.basename(res), "")
     list_files(res)
 
 if __name__ == "__main__":
